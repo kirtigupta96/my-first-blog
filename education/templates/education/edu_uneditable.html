@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+
+</head>
+<>
+{% extends 'education/base.html' %}
+{% block content %}
+<nav class="navbar navbar-inverse ">
+
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="#personal"> Personal Details </a></li>
+            <li><a href="#education"> Educational Qualifications</a></li>
+            <li><a href="#experience"> Experience</a></li>
+            <li><a href="#others"> Others</a></li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!--  <p>q1 Name : {{ Profile.q1Name }} </p>
+  <p>Email : {{ Profile.email }}</p> -->
+
+<!-- <h2></h2>
+ <q1 method="POST" class="q1.secondary-education-q1">{% csrf_token %}
+     {{ q1.as_p }
+     {{ q1.location.errors }}
+     {{ q1.location }}
+     <!--<p> <label for='yoc1'>Year of Completion:</label></p>
+     <button type="submit" class="save btn btn-default">Save</button>
+ </q1>
+ <h2>XII (Senior Secondary) details</h2>
+
+ -->
+
+<!--<q1set method="POST" class="q1.senior-secondary-education-q1set">{% csrf_token %}-->
+<!--&lt;!&ndash;<p><label for='yoc1'>Year of Completion:</label></p>&ndash;&gt;-->
+<!--{{ q1set.as_p }}-->
+<!--&lt;!&ndash;&ndash;&gt;-->
+<!--<button type="submit" class="save btn btn-default">Save</button>-->
+<!--</q1set>-->
+
+
+<div class="container" contenteditable="false">
+    <!--<q1 method="POST" class="q1.secondary-education-q1" action="" contenteditable="true">-->
+    <!--<form method="POST" class="q1.secondary-education-q1" action="">-->
+
+    {% csrf_token %}
+    {% for q1 in queryset %}
+
+
+    <div class="row">
+            <div class="col-xs-6 center-block">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2> <b>Personal Details </b></h2>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                        <div id="personal" class="panel-body">
+                            Name :   {{q1.name}}  {{q1.name.errors}} <br/>
+                            Address : {{q1.homeadd}} {{q1.homeadd.errors}} <br/>
+                            Date of Birth : {{q1.dob}} {{q1.dob.errors}} <br/>
+                            Contact : {{q1.contact}} {{q1.contact.errors}} <br/>
+                            Gender : {{q1.gender}} {{q1.gender.errors}} <br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2> <b>Educational qualifications</b> </h2>
+                        <div id="education"  class="panel-body">
+                            <h3>Secondary Education</h3><br/>
+                            Year of Completion : {{q1.yoc1}}  {{q1.yoc1.errors}}<br/>
+                            Board : {{q1.board1}} {{q1.board1.errors}} <br/>
+                            Percentage/CGPA Obtained : {{q1.percentage1}} {{q1.percentage1.errors}}
+
+                            <br/>
+                            <h3>Senior Secondary Education</h3><br/>
+                            Year of Completion :       {{q1.yoc2}} {{q1.yoc2.errors}} <br/>
+                            Board :                    {{q1.board2}} {{q1.board2.errors}} <br/>
+                            Percentage:                {{q1.percentage2}} {{q1.percentage2.errors}} <br/>
+
+
+                            <h3>Graduation </h3> <br/>
+                            Year of Completion :       {{q1.yoc3}} {{q1.yoc3.errors}} <br/>
+                            Percentage Obtained :      {{q1.percentage3}} {{q1.percentage3.errors}} <br/>
+                            College : {{q1.college}} {{q1.college.errors}} </br>
+                            Course (Specialization) :  {{q1.course}} {{q1.course.errors}} </br>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2> <b>Experience</b> </h2>
+                        <div id="experience"  class="panel-body">
+                            <h3>Internship Details</h3><br/>
+                            Company :            {{q1.company_i}} {{q1.company_i.errors}} <br/>
+                            Duration :           {{q1.duration}} {{q1.duration.errors}} <br/>
+                            Profile :            {{q1.profile_i}} {{q1.profile_i.errors}} <br/>
+                            <h3>Internship Details</h3><br/>
+                            Company :            {{q1.company_i2}} {{q1.company_i2.errors}} <br/>
+                            Duration :           {{q1.duration2}} {{q1.duration2.errors}} <br/>
+                            Profile :            {{q1.profile_i2}} {{q1.profile_i2.errors}}  <br/>                                    <br/>
+                            <h3>Project Details</h3><br/>
+                            Title :              {{q1.title_p}} {{q1.title_p.errors}} <br/>
+                            Description :        {{q1.description_p}} {{q1.description_p.errors}} <br/>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2> <b>Others </b></h2>
+                        <div id="others"  class="panel-body">
+                            <br/>
+                            <h3>Skills</h3><br/>
+                            Skills :             {{q1.skills}} {{q1.skills.errors}} <br/>
+                            Post applying for :  {{q1.work}} {{q1.work.errors}} <br/>
+                            Github link :        {{q1.git_hub}} {{q1.git_hub.errors}} <br/>
+                            LinkedIn Link :      {{q1.linked_in}} {{q1.linked_in.errors}} <br/>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="save btn btn-default" value="Submit" q1action=""/>
+    <!--</q1>-->
+    <!--</form>-->
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+
+</html>

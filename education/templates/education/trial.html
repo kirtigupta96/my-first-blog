@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AllAboutResumes</title>
+</head>
+<body>
+{% extends 'education/base.html' %}
+{% block content %}
+<!--{% for posts in q1 %}-->
+<!--<p>homeadd: {{q1.values_list}} {{posts.homeadd}}  {{posts.homeadd.error}}</p>-->
+
+<!--<label for="q1"> District</label>-->
+<input >
+    {% for q1 in queryset %}
+    <option id="{{ q1.name }}" value="{{ q1.number }}">{{ q1.name }} {{q1.name}}</option>
+    {% endfor %}
+
+<!--{% endfor %}-->
+{% endblock %}
+</body>
+</html>

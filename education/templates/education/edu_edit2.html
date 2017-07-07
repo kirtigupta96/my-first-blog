@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Profile</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+            </script>
+
+</head>
+<body>
+    {% extends 'education/base.html' %}
+    {% block content %}
+
+    <nav class="navbar navbar-inverse ">
+
+                    <div class="container">
+                        <ul class="nav navbar-nav">
+                                <li><a href="#personal"> Personal Details </a></li>
+                                <li><a href="#education"> Educational Qualifications</a></li>
+                                <li><a href="#experience"> Experience</a></li>
+                                <li><a href="#others"> Others</a></li>
+
+                            </ul>
+
+                    </div>
+
+        </nav>
+
+
+
+  <!--  <p>User Name : {{ Profile.userName }} </p>
+    <p>Email : {{ Profile.email }}</p> -->
+
+   <!-- <h2></h2>
+    <form method="POST" class="form.secondary-education-form">{% csrf_token %}
+        {{ form.as_p }
+        {{ form.location.errors }}
+        {{ form.location }}
+        <!--<p> <label for='yoc1'>Year of Completion:</label></p>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    <h2>XII (Senior Secondary) details</h2>
+
+    -->
+
+        <!--<formset method="POST" class="form.senior-secondary-education-formset">{% csrf_token %}-->
+        <!--&lt;!&ndash;<p><label for='yoc1'>Year of Completion:</label></p>&ndash;&gt;-->
+        <!--{{ formset.as_p }}-->
+        <!--&lt;!&ndash;&ndash;&gt;-->
+        <!--<button type="submit" class="save btn btn-default">Save</button>-->
+        <!--</formset>-->
+        <div class="container">
+            <form method="POST" class="form.secondary-education-form">{% csrf_token %}
+            <div class="row">
+                <div class="col-xs-6 center-block">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Personal Details </b></h2>
+                                <div id="personal">
+                                    Name : <input type="text" name="name"> <br/>
+                                    Address : <input type="text" name="homeadd"> <br/>
+                                    Date of Birth : <input type="date" name="dob"> <br/>
+                                    Contact : <input type="text" name="contact"> <br/>
+                                    Gender : <input list="cg" name="gender"> <br/>
+                                            <datalist id="cg">
+                                                        <option value="Male">
+                                                        <option value="Female">
+                                                        <option value="Other">
+                                             </datalist>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Educational qualifications</b> </h2>
+                                <div id="education">
+                                <h3>Secondary Education</h3><br/>
+                                    Year of Completion : <input type="number" name="yoc1"> <br/>
+                                    Board : <input type="text" name="board1"> <br/>
+                                    Percentage/CGPA Obtained : <input type="number" name="percentage1">
+
+                                    <br/>
+                                <h3>Senior Secondary Education</h3><br/>
+                                    Year of Completion : <input type="number" name="yoc2"> <br/>
+                                    Board :  <input type="text" name="board2"> <br/>
+                                    Percentage: <input type="number" name="percentage2"> <br/>
+
+
+                                <h3>Graduation </h3> <br/>
+                                    Year of Completion : <input type="number" name="yoc3"> <br/>
+                                    Percentage Obtained : <input type="number" name="percentage3"> <br/>
+                                    College : <input type="text" name="college"> </br>
+                                    Course (Specialization) : <input type="text" name="course"> </br>
+
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Experience</b> </h2>
+                                <div id="experience" class="form-inline">
+                                    <h3>Internship Details</h3><br/>
+                                    Company : <input type="text" name="company_i"> <br/>
+                                    Duration : <input type="text" name="duration"> <br/>
+                                    Profile : <input type="text" name="profile_i"> <br/>
+                                    <h3>Internship Details</h3><br/>
+                                    Company : <input type="text" name="company_i2"> <br/>
+                                    Duration : <input type="text" name="duration2"> <br/>
+                                    Profile : <input type="text" name="profile_i2"> <br/>                                    <br/>
+                                    <h3>Project Details</h3><br/>
+                                    Title : <input type="text" name="title_p"> <br/>
+                                    Description : <input type="text" name="description_p"> <br/>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Others </b></h2>
+                                <div id="others">
+                                    <br/>
+                                    <h3>Skills</h3><br/>
+                                    Skills : <input type="text" name="skills"> <br/>
+                                    Post applying for : <input type="text" name="work"> <br/>
+                                    Github link : <input type="url" name="git_hub"> <br/>
+                                    LinkedIn Link : <input type="url" name="linked_in"> <br/>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="save btn btn-default">
+                <button type="button"><a href="" </button>
+            </form>
+        </div>
+
+
+    {% endblock %}
+</body>
+
+</html>
